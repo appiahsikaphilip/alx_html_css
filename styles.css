@@ -1,6 +1,6 @@
-/* 
-    RESET & BASE STYLES
-    */
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
 
 * {
   margin: 0;
@@ -32,9 +32,9 @@ button {
   outline: none;
 }
 
-/* 
-    HEADER & NAVIGATION
-    */
+/* ===================================
+   HEADER & NAVIGATION
+   =================================== */
 
 header {
   position: absolute;
@@ -66,6 +66,12 @@ nav {
   height: 32px;
 }
 
+.logo h2 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -87,13 +93,14 @@ nav {
   opacity: 0.9;
 }
 
-/* 
-    HERO SECTION WITH BACKGROUND IMAGE
-    */
+/* ===================================
+   HERO SECTION WITH BACKGROUND IMAGE
+   =================================== */
 
 .hero {
   position: relative;
   min-height: 100vh;
+  /* 👇 BACKGROUND IMAGE - Save your image as 'Object.png' in images folder */
   background-image: url('images/Object.png');
   background-repeat: no-repeat;
   background-position: center center;
@@ -106,6 +113,7 @@ nav {
   padding: 150px 20px 60px;
 }
 
+/* Dark overlay for better text readability */
 .hero::before {
   content: '';
   position: absolute;
@@ -166,6 +174,10 @@ nav {
   box-shadow: 0px 6px 20px rgba(194, 113, 255, 0.6);
 }
 
+/* ===================================
+   INSTRUCTORS SECTION
+   =================================== */
+
 .instructors-section {
   position: relative;
   z-index: 2;
@@ -220,44 +232,180 @@ nav {
   opacity: 0.85;
 }
 
-/* 
-    TESTIMONIAL SECTION
-    */
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
 
-.testimonial {
-  background-color: #8E44AD; /* Updated background color */
-  color: white;
-  padding: 60px 20px; /* Add padding for better spacing */
-  text-align: left; /* Align text to the left */
+/* ===================================
+   POPULAR TUTORIALS SECTION
+   =================================== */
+
+.popular-tutorials {
+  background-color: #fff;
+  padding: 80px 100px;
+  text-align: center;
 }
 
-.testimonial-content {
+.popular-tutorials h2 {
+  font-size: 32px;
+  color: #071629;
+  font-weight: 300;
+  margin-bottom: 60px;
+}
+
+.popular-tutorials h2 .highlight {
+  color: #C271FF;
+  font-weight: 700;
+}
+
+.tutorials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tutorial-card {
+  text-align: left;
+}
+
+.video-thumbnail {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  cursor: pointer;
+  aspect-ratio: 16 / 9;
+  background-color: #f0f0f0;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  background-color: rgba(194, 113, 255, 0.85);
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align content to the left */
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.testimonial-image img {
-  border-radius: 50%;
-  width: 100px; /* Adjust size as needed */
-  height: 100px; /* Adjust size as needed */
-  margin-right: 20px; /* Space between image and text */
+.play-button:hover {
+  background-color: rgba(194, 113, 255, 1);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
-.testimonial-text {
-  max-width: 600px; /* Limit width for readability */
+.play-button i {
+  color: white;
+  font-size: 20px;
+  margin-left: 5px;
 }
 
-.testimonial-text blockquote {
-  font-size: 1.5em; /* Larger font size for quote */
+.tutorial-card h3 {
+  font-size: 16px;
+  color: #071629;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
-.testimonial-name {
-  font-weight: bold;
-  font-size: 1.2em; /* Adjust font size */
+.tutorial-card > p {
+  font-size: 14px;
+  color: rgba(7, 22, 41, 0.5);
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
-.testimonial-title {
-  font-style: italic;
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 15px;
+}
+
+.author-info img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info h4 {
+  font-size: 14px;
+  color: #C271FF;
+  font-weight: 600;
+}
+
+.rating-duration {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.stars i {
+  color: #C271FF;
+  font-size: 15px;
+}
+
+.duration {
+  font-size: 14px;
+  color: #C271FF;
+  font-weight: 600;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0 30px;
+  }
+  
+  .nav-links {
+    gap: 30px;
+  }
+  
+  .hero {
+    padding: 100px 20px 60px;
+  }
+  
+  .hero h1 {
+    font-size: 60px;
+  }
+  
+  .keywords {
+    gap: 30px;
+  }
+  
+  .instructors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  
+  .tutorials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .popular-tutorials {
+    padding: 60px 30px;
+  }
 }
