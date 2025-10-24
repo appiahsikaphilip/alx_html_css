@@ -94,7 +94,7 @@ nav {
 }
 
 /* 
-   4. HERO SECTION WITH BACKGROUND IMAGE
+    HERO SECTION WITH BACKGROUND IMAGE
     */
 
 .hero {
@@ -224,4 +224,87 @@ nav {
   color: #fff;
   line-height: 1.4;
   opacity: 0.85;
+}
+
+/* 
+    TESTIMONIAL SECTION
+    */
+
+.testimonial {
+  background-color: #8E44AD; /* Updated background color */
+  color: white;
+  padding: 60px 20px; /* Add padding for better spacing */
+  text-align: center;
+}
+
+.testimonial-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Center align the content */
+}
+
+.testimonial-image img {
+  border-radius: 50%;
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  margin-bottom: 20px; /* Space between image and text */
+}
+
+.testimonial-text {
+  max-width: 600px; /* Limit width for readability */
+}
+
+.testimonial-text blockquote {
+  font-size: 1.5em; /* Larger font size for quote */
+  margin-bottom: 10px;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  font-size: 1.2em; /* Adjust font size */
+}
+
+.testimonial-title {
+  font-style: italic;
+}
+
+/* 
+    FOOTER STYLES
+    */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.footer-logo img {
+  width: 50px; /* Adjust logo size */
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #C271FF; /* Change color on hover */
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 12px;
 }
