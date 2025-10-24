@@ -66,12 +66,6 @@ nav {
   height: 32px;
 }
 
-.logo h2 {
-  font-size: 15px;
-  font-weight: 400;
-  color: #fff;
-}
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -234,21 +228,20 @@ nav {
   background-color: #8E44AD; /* Updated background color */
   color: white;
   padding: 60px 20px; /* Add padding for better spacing */
-  text-align: center;
+  text-align: left; /* Align text to the left */
 }
 
 .testimonial-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column; /* Center align the content */
+  justify-content: flex-start; /* Align content to the left */
 }
 
 .testimonial-image img {
   border-radius: 50%;
   width: 100px; /* Adjust size as needed */
   height: 100px; /* Adjust size as needed */
-  margin-bottom: 20px; /* Space between image and text */
+  margin-right: 20px; /* Space between image and text */
 }
 
 .testimonial-text {
@@ -267,44 +260,4 @@ nav {
 
 .testimonial-title {
   font-style: italic;
-}
-
-/* 
-    FOOTER STYLES
-    */
-
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-}
-
-.footer-content {
-  text-align: center;
-}
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.footer-logo img {
-  width: 50px; /* Adjust logo size */
-}
-
-.social-links a {
-  margin: 0 10px;
-  color: #fff;
-  transition: color 0.3s;
-}
-
-.social-links a:hover {
-  color: #C271FF; /* Change color on hover */
-}
-
-.copyright {
-  margin-top: 10px;
-  font-size: 12px;
 }
