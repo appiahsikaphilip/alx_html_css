@@ -602,3 +602,51 @@ nav {
     padding: 60px 30px;
   }
 }
+
+/* ===================================
+   FAQ SECTION
+   =================================== */
+
+.faq {
+    background-color: #f9f9f9;
+    padding: 70px 100px;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 32px;
+    color: #071629;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.faq h2 .highlight {
+    color: #C271FF;
+    font-weight: 700;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Space between the items */
+}
+
+.faq-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.faq-item h3 {
+    font-size: 20px;
+    color: #071629;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 14px;
+    color: rgba(7, 22, 41, 0.7);
+    line-height: 1.6;
+}
