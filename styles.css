@@ -1,0 +1,227 @@
+/* 
+    RESET & BASE STYLES
+    */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* 
+    HEADER & NAVIGATION
+    */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+}
+
+.logo h2 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links li a:hover {
+  opacity: 0.9;
+}
+
+/* 
+   4. HERO SECTION WITH BACKGROUND IMAGE
+    */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('images/Object.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 150px 20px 60px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(7, 22, 41, 0.3) 0%, rgba(7, 22, 41, 0.75) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin-bottom: 90px;
+}
+
+.hero h1 {
+  font-size: 110px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.keywords {
+  display: flex;
+  justify-content: center;
+  gap: 55px;
+  margin: 5px 0 35px 0;
+}
+
+.keywords span {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: linear-gradient(225deg, #FF6565 0%, #C271FF 100%);
+  border-radius: 22px;
+  padding: 12px 28px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  box-shadow: 0px 4px 15px rgba(194, 113, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.95;
+  box-shadow: 0px 6px 20px rgba(194, 113, 255, 0.6);
+}
+
+.instructors-section {
+  position: relative;
+  z-index: 2;
+  margin-top: 70px;
+}
+
+.learn-title {
+  font-size: 30px;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 65px;
+}
+
+.learn-title .highlight {
+  color: #C271FF;
+  font-weight: 700;
+}
+
+.instructors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.instructor-card {
+  text-align: center;
+}
+
+.instructor-card img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 18px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.instructor-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.instructor-card p {
+  font-size: 15px;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.4;
+  opacity: 0.85;
+}
