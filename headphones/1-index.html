@@ -3,49 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Headphones - Hero Section</title>
+    <title>Headphones</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <header class="hero">
-        <nav class="navbar">
-            <div class="container nav-flex">
-                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-                
-                <label for="menu-toggle" class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-
-                <div class="logo">
-                    <img src="favicon.ico" alt="Logo" class="logo-img">
-                    <span class="logo-text">HEADPHONES</span>
-                </div>
-
-                <ul class="nav-links">
-                    <li><a href="#">what we do</a></li>
-                    <li><a href="#">our results</a></li>
-                    <li><a href="#">contact us</a></li>
-                </ul>
+    <section class="hero">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span>HEADPHONES</span>
             </div>
-        </nav>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        <div class="hero-center">
-            <div class="hero-inner">
-                <h1>Lorem ipsum dolor set amet <br> lorem ipsum</h1>
-                <p class="subtitle">Lorem ipsum dolor set amet lorem ipsum dolor set</p>
-                
-                <button class="cta-btn">CALL TO ACTION</button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#what-we-do">what we do</a></li>
+                    <li><a href="#our-results">our results</a></li>
+                    <li><a href="#contact-us">contact us</a></li>
+                </ul>
+            </nav>
+        </header>
 
-                <p class="block-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+        <div class="hero-content">
+            <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
+            <p>Lorem ipsum dolor set amet lorem ipsum dolor set</p>
+            <button class="cta-button">Call to action</button>
+            
+            <div class="hero-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </div>
         </div>
-    </header>
+    </section>
 
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
