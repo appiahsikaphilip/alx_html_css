@@ -4,65 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Headphones</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="1-styles.css">
 </head>
 <body>
-    <section class="hero">
-        <header>
-            <div class="logo">
-                <div class="logo-icon"></div>
-                <span>HEADPHONES</span>
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+                <label for="menu-toggle" class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <span>HEADPHONES</span>
+                </div>
+
+                <nav class="nav">
+                    <a href="#what-we-do">what we do</a>
+                    <a href="#our-results">our results</a>
+                    <a href="#contact-us">contact us</a>
+                </nav>
             </div>
-            
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        </div>
 
-            <nav id="nav">
-                <ul>
-                    <li><a href="#what-we-do">what we do</a></li>
-                    <li><a href="#our-results">our results</a></li>
-                    <li><a href="#contact-us">contact us</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="hero-content">
+        <div class="hero-section">
             <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
-            <p>Lorem ipsum dolor set amet lorem ipsum dolor set</p>
-            <button class="cta-button">Call to action</button>
+            <p class="subtitle">Lorem ipsum dolor set amet lorem ipsum dolor set</p>
+            <button class="cta-button">CALL TO ACTION</button>
             
-            <div class="hero-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            </div>
+            <p class="hero-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+        </div>
+    </header>
+
+    <section id="what-we-do" class="section">
+        <div class="container">
+            <h2>What we do</h2>
+            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
     </section>
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const nav = document.getElementById('nav');
+    <section id="our-results" class="section">
+        <div class="container">
+            <h2>Our results</h2>
+            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </section>
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
-
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                nav.classList.remove('active');
-            });
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-                menuToggle.classList.remove('active');
-                nav.classList.remove('active');
-            }
-        });
-    </script>
+    <section id="contact-us" class="section">
+        <div class="container">
+            <h2>Contact us</h2>
+            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </section>
 </body>
 </html>
