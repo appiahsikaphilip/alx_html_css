@@ -1,65 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Headphones</title>
-    <link rel="stylesheet" href="1-styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headphones - Full Scroll Experience</title>
+  <link rel="stylesheet" href="1-styles.css">
 </head>
 <body>
-    <header id="home">
-        <div class="container">
-            <div class="header-content">
-                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-                <label for="menu-toggle" class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
 
-                <div class="logo">
-                    <div class="logo-icon"></div>
-                    <span>HEADPHONES</span>
-                </div>
+<header class="hero-container">
+  <input type="checkbox" id="nav-check">
 
-                <nav class="nav">
-                    <a href="#what-we-do">what we do</a>
-                    <a href="#our-results">our results</a>
-                    <a href="#contact-us">contact us</a>
-                </nav>
-            </div>
-        </div>
+  <nav class="nav-bar">
+    <label for="nav-check" class="nav-btn">
+      <span class="line line-1"></span>
+      <span class="line line-2"></span>
+      <span class="line line-3"></span>
+    </label>
 
-        <div class="hero-section">
-            <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
-            <p class="subtitle">Lorem ipsum dolor set amet lorem ipsum dolor set</p>
-            <button class="cta-button">CALL TO ACTION</button>
-            
-            <p class="hero-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
-        </div>
-    </header>
+    <div class="logo-container">
+      <img src="images/images/logo_headphones.png" alt="Logo" class="logo">
+    </div>
 
-    <section id="what-we-do" class="section">
-        <div class="container">
-            <h2>What we do</h2>
-            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-    </section>
+    <ul class="corner-links">
+      <li><a href="javascript:void(0)">what we do</a></li>
+      <li><a href="javascript:void(0)">our results</a></li>
+      <li><a href="javascript:void(0)">contact us</a></li>
+    </ul>
+  </nav>
 
-    <section id="our-results" class="section">
-        <div class="container">
-            <h2>Our results</h2>
-            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-    </section>
+  <div class="hero-bg-image"></div>
+  <div class="hero-overlay"></div>
 
-    <section id="contact-us" class="section">
-        <div class="container">
-            <h2>Contact us</h2>
-            <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-    </section>
+  <div class="page-one">
+    <div class="hero-content container">
+      <h1>Lorem ipsum dolor set amet<br>lorem ipsum</h1>
+      <p class="subtitle">Lorem ipsum dolor set amet lorem ipsum dolor set</p>
+      
+      <label for="nav-check" class="btn">CALL TO ACTION</label>
+      
+      <p class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+    
+    <div class="extra-content">
+      <p>Scroll down to explore...</p>
+      <div class="spacer"></div>
+      <p>Content continues below the fold.</p>
+    </div>
+  </div>
+
+  <div class="page-two">
+    <div class="menu-content">
+      <ul class="nav-links-vertical">
+        <li><a href="javascript:void(0)">what we do</a></li>
+        <li><a href="javascript:void(0)">our results</a></li>
+        <li><a href="javascript:void(0)">contact us</a></li>
+      </ul>
+      <div class="spacer"></div>
+      <p style="color: white; opacity: 0.5;">End of menu</p>
+    </div>
+  </div>
+
+</header>
+
 </body>
 </html>
