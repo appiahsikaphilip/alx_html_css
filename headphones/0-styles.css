@@ -1,3 +1,12 @@
+/* =====================
+   RESET & VARIABLES
+===================== */
+:root {
+    --primary-red: #ff6565;
+    --white: #ffffff;
+    --dark-bg: #071629;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,27 +15,39 @@
 
 body {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    color: #ffffff;
+    color: var(--white);
+    background-color: var(--dark-bg);
+}
+
+/* =====================
+   HEADER & BACKGROUND
+===================== */
+.header {
+    height: 100vh;
+    background: linear-gradient(rgba(7, 22, 41, 0.45), rgba(7, 22, 41, 0.45)), 
+                url('images/headphones_hero_1.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.header {
-    height: 100vh;
-    background: linear-gradient(rgba(7, 22, 41, 0.45), rgba(7, 22, 41, 0.45)), 
-                url('images/images/headphones_hero_1.jpg') center/cover no-repeat;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
+/* =====================
+   NAVBAR (DESKTOP)
+===================== */
 .navbar {
     display: flex;
     align-items: center;
     padding: 40px 0;
+    position: relative;
+    z-index: 1000;
 }
 
 .header-logo img {
@@ -36,25 +57,33 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    margin-left: auto; /* Correct Right Alignment */
+    margin-left: auto; /* Aligns Nav to the Right */
 }
 
 .nav-menu li {
-    margin-left: 30px;
+    margin-left: 35px;
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--white);
     font-size: 14px;
     font-weight: bold;
     text-transform: lowercase;
+    transition: color 0.3s;
 }
 
 .nav-menu a:hover {
-    color: #ff6565;
+    color: var(--primary-red);
 }
 
+.nav-toggle, .hamburger {
+    display: none;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
 .hero-content {
     flex-grow: 1;
     display: flex;
@@ -71,19 +100,19 @@ body {
 
 .subtitle {
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .btn-cta {
-    background-color: #ff6565;
-    color: #ffffff;
+    background-color: var(--primary-red);
+    color: var(--white);
     border: none;
-    padding: 15px 45px;
+    padding: 18px 50px;
     border-radius: 40px;
     font-weight: bold;
     cursor: pointer;
-    margin-bottom: 30px;
-    transition: opacity 0.3s;
+    margin-bottom: 35px;
+    transition: opacity 0.3s ease;
 }
 
 .btn-cta:hover {
@@ -91,6 +120,76 @@ body {
 }
 
 .hero-text {
-    max-width: 700px;
+    max-width: 750px;
     line-height: 1.6;
+}
+
+/* =====================
+   TABLET & MOBILE LOGIC
+===================== */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        justify-content: center; /* Centers logo for Tablet/Mobile */
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: var(--white);
+        margin: 5px 0;
+        transition: 0.4s ease;
+    }
+
+    /* Navigation Hidden by default */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(7, 22, 41, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+        transition: left 0.5s ease;
+    }
+
+    .nav-menu li {
+        margin: 20px 0;
+    }
+
+    .nav-menu a {
+        font-size: 20px;
+    }
+
+    /* Menu Appearance Logic */
+    .nav-toggle:checked ~ .nav-menu {
+        left: 0;
+    }
+
+    /* Hamburger to X Transformation */
+    .nav-toggle:checked ~ .hamburger .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .nav-toggle:checked ~ .hamburger .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle:checked ~ .hamburger .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 }
