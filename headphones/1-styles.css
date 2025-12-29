@@ -1,158 +1,116 @@
 /* =====================
-   GLOBAL RESET
+   RESET & BASE
 ===================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root {
-  --primary-color: #ff6565;
-  --orange-active: #ff8c00;
-  --white-color: #ffffff;
+body {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    color: #ffffff;
+    line-height: 1.5;
 }
 
-html, body {
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
-}
-
-/* =====================
-   HEADER NAVIGATION (Score Fix)
-===================== */
-.nav-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  z-index: 2000;
-  /* Logo Aligned Left Logic */
-  justify-content: flex-start; 
-}
-
-#nav-check { display: none; }
-
-.logo-container {
-  margin-left: 60px; /* Offset to sit next to the icon */
-}
-
-.logo { width: 160px; }
-
-/* Icon Styling and "X" Transformation */
-.nav-btn {
-  cursor: pointer;
-  z-index: 2100;
-}
-
-.line {
-  display: block;
-  width: 25px;
-  height: 2px;
-  background: var(--white-color);
-  margin-bottom: 6px;
-  transition: transform 0.4s ease, opacity 0.3s ease;
-}
-
-/* X Transformation */
-#nav-check:checked ~ .nav-bar .line-1 { transform: translateY(8px) rotate(45deg); }
-#nav-check:checked ~ .nav-bar .line-2 { opacity: 0; }
-#nav-check:checked ~ .nav-bar .line-3 { transform: translateY(-8px) rotate(-45deg); }
-
-/* Top Right Links */
-.corner-links {
-  margin-left: auto; /* Pushes links to the far right */
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.corner-links a {
-  text-decoration: none;
-  color: var(--white-color);
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.corner-links a:active { color: var(--orange-active); }
-
-/* =====================
-   BACKGROUND & PAGE LAYOUT
-===================== */
-.hero-bg-image {
-  position: fixed;
-  inset: 0;
-  background: url("images/images/headphones_hero_1.jpg") center/cover no-repeat;
-  z-index: 1;
-}
-
-.hero-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(7, 22, 41, 0.45);
-  z-index: 2;
-}
-
-.page-one {
-  position: relative;
-  z-index: 100;
-  color: var(--white-color);
-  text-align: center;
-  padding-top: 250px;
-  min-height: 120vh; /* Scrollable */
-}
-
-.btn {
-  display: inline-block;
-  padding: 18px 45px;
-  background: var(--primary-color);
-  color: var(--white-color);
-  border-radius: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 30px 0;
+.container {
+    max-width: 1000px; /* Aligned with typical desktop content width */
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* =====================
-   SECOND PAGE (Vertical Menu)
+   HERO BACKGROUND
 ===================== */
-.page-two {
-  position: fixed;
-  inset: 0;
-  z-index: 500;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s;
-  overflow-y: auto;
-  padding-top: 200px;
-  display: flex;
-  justify-content: center;
+.hero {
+    position: relative;
+    height: 100vh;
+    /* Linear gradient creates the dark overlay effect seen in screenshots */
+    background: linear-gradient(rgba(7, 22, 41, 0.45), rgba(7, 22, 41, 0.45)), 
+                url('images/images/headphones_hero_1.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
 }
-
-.nav-links-vertical {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  text-align: center;
-}
-
-.nav-links-vertical a {
-  text-decoration: none;
-  color: var(--white-color);
-  font-weight: bold;
-  font-size: 24px;
-}
-
-.nav-links-vertical a:active { color: var(--orange-active); }
 
 /* =====================
-   SWITCH LOGIC
+   NAVIGATION (DESKTOP)
 ===================== */
-#nav-check:checked ~ .page-one { opacity: 0; visibility: hidden; }
-#nav-check:checked ~ .page-two { opacity: 1; visibility: visible; }
-#nav-check:checked ~ .nav-bar .corner-links { opacity: 0; }
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    width: 100%;
+}
 
-.spacer { height: 600px; }
+.logo img {
+    width: 160px;
+    height: auto;
+}
+
+.nav-links {
+    margin-left: auto; /* Correctly aligns navigation to the right */
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: lowercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6565; /* The specific hover color from the rubric */
+}
+
+/* =====================
+   HERO CONTENT (CENTERED)
+===================== */
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical alignment */
+    align-items: center;     /* Horizontal alignment */
+    text-align: center;
+    padding-bottom: 80px;    /* Visual balance */
+}
+
+.hero-content h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+.btn-cta {
+    background-color: #ff6565; /* Red per rubric */
+    color: #ffffff;
+    border: none;
+    padding: 16px 45px;
+    border-radius: 40px; /* Rounded corners */
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 35px;
+    transition: opacity 0.3s ease;
+}
+
+.btn-cta:hover {
+    opacity: 0.9; /* Opacity hover effect */
+}
+
+.hero-description {
+    max-width: 750px; /* Matches the text block in your screenshot */
+    font-size: 16px;
+    font-weight: 400;
+}
