@@ -1,0 +1,71 @@
+/* ============================= */
+/* Base styling (general look)   */
+/* ============================= */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    height: 100vh;           /* full viewport height */
+    display: flex;            /* make body a flex container */
+    flex-direction: column;   /* stack header, main, footer vertically */
+    background-color: #f9f9f9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* ============================= */
+/* Header and Footer styling      */
+/* ============================= */
+
+header, footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    border-bottom: none;
+}
+
+/* ============================= */
+/* Main layout styling            */
+/* ============================= */
+
+main {
+    display: flex;            /* make main a flex container */
+    flex-direction: row;      /* article + aside side by side */
+    flex: auto;               /* auto width & height */
+}
+
+/* Article takes 2/3 of the width */
+article {
+    flex: 2;
+    overflow-y: auto;         /* scroll if content is too long */
+    padding: 10px;
+    border: 1px solid #ccc;   /* optional for clarity */
+    background-color: #fff;   /* optional background */
+}
+
+/* Aside takes 1/3 of the width */
+aside {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+}
