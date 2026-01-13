@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My First Webpage</title>
+    <meta charset="UTF-8">
 
-  <link href="base.css" rel="stylesheet">
-<link href="styles.css" rel="stylesheet">
+    <!-- REQUIRED for responsive web design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>My First Portfolio</title>
+
+    <!-- REQUIRED CSS FILES -->
+    <link href="base.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body>
-  <h1>Hello ALX</h1>
-  <p>This is my first webpage.</p>
+
+<body class="works_on_smartphone">
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+
+    <main>
+        <article>
+            <h2>Article Section</h2>
+            <p>
+                This is the main content of the page.  
+                When the screen becomes smaller, this layout will adapt properly
+                for smartphones thanks to the works_on_smartphone class.
+            </p>
+            <p>
+                Add more content here to test scrolling behavior.
+            </p>
+        </article>
+
+        <aside>
+            <h3>Aside Section</h3>
+            <p>
+                This is the aside content.  
+                It will stack properly on small screens.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026 My Portfolio</p>
+    </footer>
 </body>
 </html>
